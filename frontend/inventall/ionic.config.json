@@ -1,0 +1,7 @@
+{
+  "name": "inventall",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

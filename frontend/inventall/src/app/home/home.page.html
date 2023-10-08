@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="toolbar">
+    <br>
+    <ion-title>
+      Inventall
+    </ion-title>
+    <br>
+    <ion-button class="routingButton" expand="block" (click)="gotoCrud()">CRUD</ion-button>
+    <table class="inventall-table">
+      <thead>
+        <tr>
+          <th class="item-th">Item</th>
+          <th class="quantity-th">Quantity</th>
+          <th class="date-th">Date</th>
+          <th class="description-th">Description</th>
+          <th class="button-th"></th>
+          <th class="button-th"></th>
+        </tr>
+      </thead>
+    </table>
+  </ion-toolbar>
+
+</ion-header>
+<ion-content class="home-content" [fullscreen]="true">
+
+  <div style="overflow-x:auto;">
+    <table class="inventall-table">
+
+      <tbody>
+        <tr *ngFor="let i of items">
+          <td class="item-th">{{i.name}}</td>
+          <td class="quantity-th">{{i.quantity}}</td>
+          <td class="date-th">{{i.entry_date}}</td>
+          <td class="description-th">{{i.description}}</td>
+          <td><ion-button class="routingButton" expand="block" (click)="deleteItem(i.id)">DELETE</ion-button></td>
+          <td><ion-button class="routingButton" expand="block" (click)="updatePopUp(i.id)">UPDATE</ion-button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</ion-content>
